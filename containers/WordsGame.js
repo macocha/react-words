@@ -14,10 +14,11 @@ export default class WordsGame extends React.Component {
       {text: 'A type of magical spell', answer: 'enchantment', solved: false},
       {text: 'Powerful wizard from LOTR', answer: 'gandalf', solved: false}
     ];
+    const currentGuess = 'justatest'
     return (
       <div>
-        <CluesList clues = {clues}/>
-        <ActionBar />
+        <CluesList clues = {clues} />
+        <ActionBar currentGuess = {currentGuess} />
         <ChunkBoard />
       </div>
     );
