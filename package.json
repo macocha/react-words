@@ -1,5 +1,5 @@
 {
-  "name": "7-react-words",
+  "name": "react-words",
   "version": "0.0.1",
   "description": "React and redux word game based on '7 little words'",
   "main": "server.js",

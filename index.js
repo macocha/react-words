@@ -1,6 +1,6 @@
 import React from 'react';
 import App from './containers/App';
-//ADD CSS HERE
+import './style.css'
 
 React.render(
   <App />,
