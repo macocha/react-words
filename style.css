@@ -8,7 +8,9 @@ ol{padding:0;}input[type=reset],input[type=submit]{-webkit-appearance:button;cur
 
 .wordsgame {
   max-width: 800px;
-  background-color: mistyrose;
+  background-color: #fdf6e3;
+  color: #657b83;
+  padding-bottom: 2em;
 }
 
 
@@ -86,5 +88,34 @@ ol{padding:0;}input[type=reset],input[type=submit]{-webkit-appearance:button;cur
   margin-left: 10px;
   padding: 5px;
   border: 0;
-  background: goldenrod;
+  background-color: #859900;
+}
+
+.action-bar-guess:hover {
+  background-color: #9fb02f;
+}
+
+/*** Chunk Board ***/
+
+.chunk-board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+  height: 12em;
+  margin: auto;
+  margin-top: 1.5em;
+  align-content: space-around;
+}
+
+.chunk-board-chunk {
+  width: 23%;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #eee8d5;
+  color: #839496;
+  padding: 5px;
+}
+
+.chunk-board-chunk:not(:nth-child(4)) {
+  margin-right: 2%;
 }

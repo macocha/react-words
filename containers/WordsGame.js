@@ -15,11 +15,33 @@ export default class WordsGame extends React.Component {
       {text: 'Powerful wizard from LOTR', answer: 'gandalf', solved: false}
     ];
     const currentGuess = 'justatest'
+    const chunks = [
+      {text: 'alc', id: '', used: false},
+      {text: 'he', id: '', used: false},
+      {text: 'my', id: '', used: false},
+      {text: 'gr', id: '', used: false},
+      {text: 'oi', id: '', used: false},
+      {text: 'ta', id: '', used: false},
+      {text: 'rot', id: '', used: false},
+      {text: 'sp', id: '', used: false},
+      {text: 'ell', id: '', used: false},
+      {text: 'pot', id: '', used: false},
+      {text: 'ion', id: '', used: true},
+      {text: 'enc', id: '', used: false},
+      {text: 'han', id: '', used: true},
+      {text: 'tm', id: '', used: false},
+      {text: 'ent', id: '', used: false},
+      {text: 'ga', id: '', used: false},
+      {text: 'nd', id: '', used: false},
+      {text: 'alf', id: '', used: false},
+      {text: 'im', id: '', used: false},
+      {text: 're', id: '', used: false},
+    ]
     return (
       <div>
         <CluesList clues = {clues} />
         <ActionBar currentGuess = {currentGuess} />
-        <ChunkBoard />
+        <ChunkBoard chunks = {chunks} />
       </div>
     );
   }
