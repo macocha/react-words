@@ -11,6 +11,7 @@ ol{padding:0;}input[type=reset],input[type=submit]{-webkit-appearance:button;cur
   background-color: #fdf6e3;
   color: #657b83;
   padding-bottom: 2em;
+  margin: auto;
 }
 
 

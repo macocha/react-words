@@ -1,8 +1,21 @@
 import React from 'react';
 import App from './containers/App';
+
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { wordsGame } from './reducers/wordsGameReducers';
+
 import './style.css'
+import polyfill from './polyfills'
+
+polyfill();
+
+//Create redux store
+let store = createStore(wordsGame);
 
 React.render(
-  <App />,
+  <Provider store={store}>
+    {() => <App />}
+  </Provider>,
   document.getElementById('root')
 );
