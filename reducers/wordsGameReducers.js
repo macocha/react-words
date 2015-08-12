@@ -1,6 +1,8 @@
 import * as types from '../constants/ActionTypes';
 import shuffle from 'shuffle-array';
 
+
+//TODO Auto-generation of words and chunks.
 const initialState = {
   clues: [
     {text: 'The causing of any sort of mysterious sudden transmutation', answer: 'alchemy', solved:false},
@@ -35,6 +37,7 @@ const initialState = {
     {text: 're', id: '20', used: false, selected: false},
   ])
 };
+
 
 export function wordsGame(state = initialState, action) {
   switch (action.type) {

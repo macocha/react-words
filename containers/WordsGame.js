@@ -5,6 +5,7 @@ import CluesList from '../components/CluesList';
 import ActionBar from '../components/ActionBar';
 import ChunkBoard from '../components/ChunkBoard'
 
+//Main class for the game
 class WordsGame extends React.Component {
   render() {
     return (
@@ -20,4 +21,5 @@ class WordsGame extends React.Component {
   }
 }
 
+//Connect to redux store
 export default connect(s => s)(WordsGame);
