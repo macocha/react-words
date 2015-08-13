@@ -6,9 +6,7 @@ import { createStore } from 'redux';
 import { wordsGame } from './reducers/wordsGameReducers';
 
 import './style.css'
-import polyfill from './polyfills'
-
-polyfill();
+import './polyfills'
 
 //Create redux store
 let store = createStore(wordsGame);
