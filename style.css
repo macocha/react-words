@@ -14,6 +14,27 @@ ol{padding:0;}input[type=reset],input[type=submit]{-webkit-appearance:button;cur
   margin: auto;
 }
 
+/*** Header ***/
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-score {
+  margin-left: 50px;
+  padding: 10px;
+  background-color: #eee8d5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-score::before {
+  content: 'score';
+  margin-bottom: 0.5em;
+}
+
 
 /*** CluesList ***/
 .clue {

@@ -14,6 +14,7 @@ const initialState = {
     {text: 'Powerful wizard from LOTR', answer: 'gandalf', solved: false}
   ],
   currentGuess: '',
+  score: 0,
   chunks: shuffle([
     {text: 'alc', id: '1', used: false, selected: false},
     {text: 'he', id: '2', used: false, selected: false},
@@ -38,6 +39,9 @@ const initialState = {
   ])
 };
 
+const scoreIncrement = 10;
+const clearBonus = 30;
+
 
 export function wordsGame(state = initialState, action) {
   switch (action.type) {
@@ -61,6 +65,7 @@ export function wordsGame(state = initialState, action) {
       if (clueIndex != -1)
         return Object.assign({}, state, {
           currentGuess: '',
+          score: state.score + scoreIncrement,
           clues: [
             ...state.clues.slice(0, clueIndex),
             Object.assign({}, state.clues[clueIndex], {
