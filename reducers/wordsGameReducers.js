@@ -2,41 +2,10 @@ import * as types from '../constants/ActionTypes';
 import board from './board'
 import shuffle from 'shuffle-array';
 
-const initialState = {
-  clues: [
-    {text: 'The causing of any sort of mysterious sudden transmutation', answer: 'alchemy', solved:false},
-    {text: 'A book of instructions in the use of magic, especially summoning demons.', answer: 'grimoire', solved:false},
-    {text: 'Set of playing cards often used for mystical divination.', answer: 'tarot', solved:false},
-    {text: 'Words or a formula supposed to have magical powers. ', answer: 'spell', solved:false},
-    {text: 'A small portion or dose of a liquid which is magical.', answer: 'potion', solved: false},
-    {text: 'A type of magical spell', answer: 'enchantment', solved: false},
-    {text: 'Powerful wizard from LOTR', answer: 'gandalf', solved: false}
-  ],
+const initialState = Object.assign({
   currentGuess: '',
   score: 0,
-  chunks: shuffle([
-    {text: 'alc', id: '1', used: false, selected: false},
-    {text: 'he', id: '2', used: false, selected: false},
-    {text: 'my', id: '3', used: false, selected: false},
-    {text: 'gr', id: '4', used: false, selected: false},
-    {text: 'oi', id: '5', used: false, selected: false},
-    {text: 'ta', id: '6', used: false, selected: false},
-    {text: 'rot', id: '7', used: false, selected: false},
-    {text: 'sp', id: '8', used: false, selected: false},
-    {text: 'ell', id: '9', used: false, selected: false},
-    {text: 'pot', id: '10', used: false, selected: false},
-    {text: 'ion', id: '11', used: false, selected: false},
-    {text: 'enc', id: '12', used: false, selected: false},
-    {text: 'han', id: '13', used: false, selected: false},
-    {text: 'tm', id: '14', used: false, selected: false},
-    {text: 'ent', id: '15', used: false, selected: false},
-    {text: 'ga', id: '16', used: false, selected: false},
-    {text: 'nd', id: '17', used: false, selected: false},
-    {text: 'alf', id: '18', used: false, selected: false},
-    {text: 'im', id: '19', used: false, selected: false},
-    {text: 're', id: '20', used: false, selected: false},
-  ])
-};
+}, board(undefined, {}));
 
 const scoreIncrement = 10;
 const clearBonus = 30;
@@ -64,7 +33,7 @@ export function wordsGame(state = initialState, action) {
       //Needed to check if it's the last one solved
       const numOfUnsolved = state.clues.filter(c => !c.solved).length;
       if (clueIndex != -1)
-      //Create new state and pass it to the board reducer for new board generation if needed.
+        //Create new state and pass it to the board reducer for new board generation if needed.
         return board(Object.assign({}, state, {
           currentGuess: '',
           score: state.score + scoreIncrement + (numOfUnsolved === 1 ? clearBonus : 0),

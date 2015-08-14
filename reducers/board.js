@@ -3,6 +3,9 @@ import { clues } from '../constants/CluesList';
 import shuffle from 'shuffle-array';
 
 const numOfChunks = 20;
+const maxChunk = 6;
+
+const initialState = board({},{type: types.NEW_BOARD});
 
 //n is a number of chunks to split to
 function splitIntoChunks(word, n) {
@@ -17,14 +20,16 @@ function splitIntoChunks(word, n) {
       let slicePoint = Math.floor(Math.random()*2) + 2;
       return [word.slice(0, slicePoint)].concat(splitIntoChunks(word.slice(slicePoint)));
     } else {
-      let slicePoint = Math.floor(Math.random()*3) + 2;
+      let slicePoint = Math.floor(Math.random()*4) + 2;
       return [word.slice(0, slicePoint)].concat(splitIntoChunks(word.slice(slicePoint)));
     }
   } else {
     if (n*2 > word.length || n <= 0)
       throw `Can't do it sire.`;
+    else if (Math.round(word.length/n) > maxChunk)
+      throw `Can't do it sire.`;
     else if (n == 1)
-      return [word]
+      return [word];
     else {
       let slicePoint = Math.round(word.length/n);
       return [word.slice(0, slicePoint)].concat(splitIntoChunks(word.slice(slicePoint), n-1));
@@ -60,7 +65,7 @@ function prepareChunks(wordsList) {
 }
 
 //Board (meta-game) reducer
-export default function board(state = {clues: [], chunks: []}, action) {
+export default function board(state = initialState, action) {
   switch (action.type) {
 
     case types.SHUFFLE:
