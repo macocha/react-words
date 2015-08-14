@@ -8,6 +8,7 @@ export default class ActionBar extends React.Component {
         <button className='action-bar-clear' onClick={() => this.props.onClearClick()}>X</button>
         <button className='action-bar-guess' onClick={() => this.props.onGuessClick()}>Guess</button>
         <button className='action-bar-guess' onClick={() => this.props.onShuffleClick()}>Shuffle</button>
+        <button className='action-bar-guess' onClick={() => this.props.onNewBoardClick()}>New Board</button>
       </div>
     );
   }

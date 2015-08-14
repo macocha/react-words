@@ -24,3 +24,9 @@ export function shuffle() {
     type: types.SHUFFLE,
   };
 }
+
+export function newBoard() {
+  return {
+    type: types.NEW_BOARD,
+  };
+}

@@ -16,7 +16,8 @@ class WordsGame extends React.Component {
         <ActionBar currentGuess = {this.props.currentGuess}
           onGuessClick = {() => this.props.dispatch(actions.makeGuess())}
           onClearClick = {() => this.props.dispatch(actions.clearInput())}
-          onShuffleClick = {() => this.props.dispatch(actions.shuffle())} />
+          onShuffleClick = {() => this.props.dispatch(actions.shuffle())}
+          onNewBoardClick = {() => this.props.dispatch(actions.newBoard())}/>
         <ChunkBoard chunks = {this.props.chunks} onChunkClick = {(id) => this.props.dispatch(actions.selectChunk(id))}/>
       </div>
     );
